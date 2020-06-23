@@ -12,6 +12,7 @@ class Element {
   set top(top) {
     this._top = top;
     console.log('设置顶部');
+    this.view.style.transform = `translateY(${top}px)`;
   }
 
   get top() {
@@ -133,6 +134,7 @@ class ScrollAdapter extends Adapter {
     const v = document.createElement('div');
     v.style.zIndex = 100;
     v.style.border = '1px solid red';
+    v.style.position = 'absolute';
     return v;
   }
 
